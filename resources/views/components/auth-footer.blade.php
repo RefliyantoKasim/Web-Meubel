@@ -1,3 +1,3 @@
   <div class="simple-footer">
-      Copyright &copy; Total Praktek 2024
+      &copy; pelayanan-meubel-2025
   </div>

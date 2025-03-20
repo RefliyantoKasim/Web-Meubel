@@ -74,21 +74,32 @@
                                     </div>
                                 @enderror
                             </div>
+
+                            <div class="form-group">
+                                <label>Estimasi waktu (hari)</label>
+                                <input type="number" class="form-control @error('estimated_days') is-invalid @enderror"
+                                    name="estimated_days" value="{{ $product->estimated_days }}">
+                                @error('estimated_days')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
                             <div class="form-group">
                                 <label class="form-label">Category</label>
                                 <div class="selectgroup w-100">
                                     <label class="selectgroup-item">
                                         <input type="radio" name="category" value="food" class="selectgroup-input"
                                             checked="">
-                                        <span class="selectgroup-button">Food</span>
+                                        <span class="selectgroup-button">lemari</span>
                                     </label>
                                     <label class="selectgroup-item">
                                         <input type="radio" name="category" value="drink" class="selectgroup-input">
-                                        <span class="selectgroup-button">Drink</span>
+                                        <span class="selectgroup-button">meja</span>
                                     </label>
                                     <label class="selectgroup-item">
                                         <input type="radio" name="category" value="snack" class="selectgroup-input">
-                                        <span class="selectgroup-button">Snack</span>
+                                        <span class="selectgroup-button">kursi</span>
                                     </label>
 
                                 </div>
@@ -105,22 +116,21 @@
                                         {{ $message }}
                                     </div>
                                 @enderror
-                             </div>
+                            </div>
 
 
-                    
-                    </div>
-                    <div class="card-footer text-right">
-                        <button class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
+
+                        </div>
+                        <div class="card-footer text-right">
+                            <button class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
-
-        </div>
-    </section>
-</div>
+        </section>
+    </div>
 @endsection
 
 @push('scripts')
 @endpush
-

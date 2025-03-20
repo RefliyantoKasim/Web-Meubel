@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', 'Login Admin POS-Cafe')
+@section('title', 'Login Admin Pelayanan')
 
 @push('style')
     <!-- CSS Libraries -->
@@ -10,11 +10,14 @@
 @section('main')
     <div class="card card-primary">
         <div class="card-header">
-            <h4>Login</h4>
+            <h4>Login Admin</h4>
         </div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate="">
+            {{-- pakai url --}}
+            <form method="POST" action="{{ url('login') }}" class="needs-validation" novalidate="">
+                {{-- pakai route --}}
+                {{-- <form method="POST" action="{{ route('login') }}" class="needs-validation" novalidate=""> --}}
                 @csrf
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -55,9 +58,9 @@
             </form>
         </div>
     </div>
-    <div class="text-muted mt-5 text-center">
+    {{-- <div class="text-muted mt-5 text-center">
         Don't have an account? <a href="{{ route('register') }}">Create One</a>
-    </div>
+    </div> --}}
 @endsection
 
 @push('scripts')

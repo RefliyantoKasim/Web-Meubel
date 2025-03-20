@@ -21,8 +21,9 @@ class ProductFactory extends Factory
             'description' => $this->faker->text,
             'price' => $this->faker->numberBetween(10000, 100000),
             'stock' => $this->faker->numberBetween(1, 100),
-            'category' => $this->faker->randomElement(['food', 'drink', 'snack']),
+            'category' => $this->faker->randomElement(['lemari', 'meja', 'kursi']),
             'image' => $this->faker->imageUrl(),
+            'estimated_days' => $this->faker->numberBetween(5, 60), //estimasi waktu
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -48,6 +49,8 @@ class AuthController extends Controller
         //
     }
 
+
+    // login
     public function login(Request $request)
     {
         $loginData = $request->validate([
@@ -84,5 +87,35 @@ class AuthController extends Controller
         return response()->json([
             'message' => 'Logout success',
         ]);
+    }
+
+
+    // register
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'phone' => 'required',
+            'password' => 'required'
+        ]);
+
+        $data = $request->all();
+        $data['password'] = Hash::make($request->input('password'));
+
+        $user = \App\Models\User::create($data);
+
+        if ($user) {
+            return response()->json([
+                'success' => true,
+                'message' => 'User Created',
+                'data' => $user
+            ], 201);
+        } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'User Failed to Save',
+            ], 409);
+        }
     }
 }

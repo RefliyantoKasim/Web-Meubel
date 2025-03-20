@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,9 +21,11 @@ return new class extends Migration
             //stock
             $table->integer('stock')->default(0);
             //category enum (food, drink, snack)
-            $table->enum('category', ['food', 'drink', 'snack']);
+            $table->enum('category', ['lemari', 'meja', 'kursi']);
             //image
             $table->string('image')->nullable();
+            // estimasi waktu
+            $table->integer('estimated_days')->default(0);
             $table->timestamps();
         });
     }

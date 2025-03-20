@@ -4,19 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
     public function index(Request $request)
     {
-        //get data products
+        // Get data products
         $products = DB::table('products')
             ->when($request->input('name'), function ($query, $name) {
                 return $query->where('name', 'like', '%' . $name . '%');
             })
             ->orderBy('created_at', 'desc')
             ->paginate(10);
-        //sort by created_at desc
 
         return view('pages.products.index', compact('products'));
     }
@@ -30,45 +30,52 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required|min:3|unique:products',
-            'price' => 'required|integer',
-            'stock' => 'required|integer',
-            'category' => 'required|in:food,drink,snack',
-            'image' => 'required|image|mimes:png,jpg,jpeg'
+            'price' => 'required|integer|min:0',
+            'stock' => 'required|integer|min:0',
+            'category' => 'required|in:lemari,meja,kursi',
+            'image' => 'required|image|mimes:png,jpg,jpeg|max:2048',
+            'estimated_days' => 'required|integer|min:1', // Validasi estimasi waktu
         ]);
 
         $filename = time() . '.' . $request->image->extension();
         $request->image->storeAs('products', $filename, 'public');
-        $data = $request->all();
 
-        $product = new \App\Models\Product;
+        $product = new Product();
         $product->name = $request->name;
         $product->price = (int) $request->price;
         $product->stock = (int) $request->stock;
         $product->category = $request->category;
         $product->image = $filename;
+        $product->estimated_days = (int) $request->estimated_days; // Simpan estimasi waktu
         $product->save();
 
-        return redirect()->route('product.index')->with('success', 'Product successfully created');
+        return redirect()->route('product.index')->with('success', 'Produk Berhasil Dibuat');
     }
 
     public function edit($id)
     {
-        $product = \App\Models\Product::findOrFail($id);
+        $product = Product::findOrFail($id);
         return view('pages.products.edit', compact('product'));
     }
 
     public function update(Request $request, $id)
     {
-        // $data = $request->all();
-        // $product = \App\Models\Product::findOrFail($id);
-        // $product->update($data);
-        $product = \App\Models\Product::findOrFail($id);
+        $product = Product::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|integer|min:0',
+            'stock' => 'required|integer|min:0',
+            'category' => 'required|in:lemari,meja,kursi',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'estimated_days' => 'required|integer|min:1', // Validasi estimasi waktu
+        ]);
+
         $filename = $product->image;
-        // check image
+
         if ($request->hasFile('image')) {
             $filename = time() . '.' . $request->image->extension();
             $request->image->storeAs('products', $filename, 'public');
-            $product['image'] = $filename;
         }
 
         $product->update([
@@ -77,24 +84,16 @@ class ProductController extends Controller
             'stock' => (int) $request->stock,
             'category' => $request->category,
             'image' => $filename,
-
+            'estimated_days' => (int) $request->estimated_days, // Update estimasi waktu
         ]);
 
-
-
-
-
-
-
-
-
-        return redirect()->route('product.index')->with('success', 'Product successfully updated');
+        return redirect()->route('product.index')->with('success', 'Produk Berhasil Diupdate');
     }
 
     public function destroy($id)
     {
-        $product = \App\Models\Product::findOrFail($id);
+        $product = Product::findOrFail($id);
         $product->delete();
-        return redirect()->route('product.index')->with('success', 'Product successfully deleted');
+        return redirect()->route('product.index')->with('success', 'Produk Berhasil Dihapus');
     }
 }

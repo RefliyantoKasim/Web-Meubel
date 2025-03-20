@@ -1,13 +1,36 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">MEUBEL</a>
-            <a href="index.html"><img src="{{ asset('img/kedai.png') }}" alt="logo" width="80"></a>
+            <div class="logo-container">
+                <a href="index.html">
+                    <a href="#" class="logo-text">MEUBEL 2N</a>
+                    <img src="{{ asset('img/logo2.png') }}" alt="logo" width="100">
+                </a>
+            </div>
+
+            <style>
+                /* Add some space below the logo */
+                .sidebar-brand {
+                    margin-bottom: 20px;
+                    /* Adjust this value as needed */
+                }
+
+                /* Adjust the Dashboard section */
+                .sidebar-menu .menu-header {
+                    margin-top: 20px;
+                    /* Adjust this value to create space before the dashboard menu */
+                }
+
+                /* Optionally, adjust padding or margin for the nav items */
+                .sidebar-menu li {
+                    padding-top: 10px;
+                    /* Adjust spacing between menu items */
+                }
+            </style>
+
 
         </div>
-        <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">MK</a>
-        </div>
+
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li class="{{ Request::is('home*') ? 'active' : '' }}">
@@ -27,10 +50,12 @@
 
             </li>
             <li class="menu-header">Orders</li>
-            <li class="nav-item">
-                <a href="{{ route('order.index') }}" class="nav-link {{ Request::is('order') ? 'active' : '' }}"><i
-                        class="fas fa-shopping-cart"></i><span>Orders</span></a>
+            <li class="{{ Request::is('order*') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('order.index') }}"><i class="fas fa-shopping-cart"></i><span>All
+                        Orders
+                    </span></a>
             </li>
+
 
     </aside>
 </div>

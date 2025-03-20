@@ -11,9 +11,9 @@
     <div class="main-content">
         <section class="section">
             <div class="section-header">
-                <h1>Products</h1>
+                <h1>Produk</h1>
                 <div class="section-header-button">
-                    <a href="{{ route('product.create') }}" class="btn btn-primary">Add New</a>
+                    <a href="{{ route('product.create') }}" class="btn btn-primary">Tambah Produk +</a>
                 </div>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="home">Dashboard</a></div>
@@ -27,6 +27,10 @@
                         @include('layouts.alert')
                     </div>
                 </div>
+                <h2 class="section-title">Produk</h2>
+                <p class="section-lead">
+                    Anda dapat mengelola semua produk, seperti mengedit, menghapus, dan lainnya.
+                </p>
                 <div class="row mt-4">
                     <div class="col-12">
                         <div class="card">
@@ -36,7 +40,7 @@
                                 <div class="float-right">
                                     <form method="GET" action="{{ route('product.index') }}">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search" name="name">
+                                            <input type="text" class="form-control" placeholder="Cari" name="name">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                             </div>
@@ -56,6 +60,7 @@
                                             <th>Stock</th>
                                             <th>Photo</th>
                                             <th>Created At</th>
+                                            <th>Estimasi waktu</th>
                                             <th>Action</th>
                                         </tr>
                                         @foreach ($products as $product)
@@ -78,8 +83,12 @@
                                                     @endif
 
                                                 </td>
-
+                                                <!-- Menampilkan estimasi waktu -->
                                                 <td>{{ $product->created_at }}</td>
+                                                <td>{{ $product->estimated_days }} hari</td>
+
+
+
                                                 <td>
                                                     <div class="d-flex justify-content-center">
                                                         @if (auth()->user()->roles != 'user')

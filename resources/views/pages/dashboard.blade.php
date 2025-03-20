@@ -22,10 +22,10 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4>Total Admin</h4>
+                                <h4>Total produk</h4>
                             </div>
                             <div class="card-body">
-                                10
+                                1 {{-- {{ $productCount }} --}}
                             </div>
                         </div>
                     </div>
@@ -67,10 +67,10 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4>Online Users</h4>
+                                <h4>Total Users</h4>
                             </div>
                             <div class="card-body">
-                                47
+                                1 {{-- {{ $userCount }} --}}
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-md-12 col-12 col-sm-12">
-                    <div class="card">
+                    {{-- <div class="card">
                         <div class="card-header">
                             <h4>Statistics</h4>
                             <div class="card-header-action">
@@ -87,8 +87,8 @@
                                     <a href="#" class="btn">Month</a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-body">
+                        </div> --}}
+                    {{-- <div class="card-body">
                             <canvas id="myChart" height="182"></canvas>
                             <div class="statistic-details mt-sm-4">
                                 <div class="statistic-details-item">
@@ -120,11 +120,11 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 col-12 col-sm-12">
-                    <div class="card">
-                        <div class="card-header">
+                    <div class="card"> --}}
+                    {{-- <div class="card-header">
                             <h4>Recent Activities</h4>
-                        </div>
-                        <div class="card-body">
+                        </div> --}}
+                    {{-- <div class="card-body">
                             <ul class="list-unstyled list-unstyled-border">
                                 <li class="media">
                                     <img class="rounded-circle mr-3" width="50"
@@ -166,8 +166,8 @@
                                             Nulla vel metus scelerisque ante sollicitudin.</span>
                                     </div>
                                 </li>
-                            </ul>
-                            <div class="pt-1 pb-1 text-center">
+                            </ul> --}}
+                    {{-- <div class="pt-1 pb-1 text-center">
                                 <a href="#" class="btn btn-primary btn-lg btn-round">
                                     View All
                                 </a>
@@ -669,7 +669,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </section>
     </div>
 @endsection
