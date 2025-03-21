@@ -13,7 +13,7 @@
             <div class="section-header">
                 <h1>Produk</h1>
                 <div class="section-header-button">
-                    <a href="{{ route('product.create') }}" class="btn btn-primary">Tambah Produk +</a>
+                    <a href="{{ route('product.create') }}" class="btn btn-sm btn-success btn-icon">Tambah Produk +</a>
                 </div>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="home">Dashboard</a></div>
@@ -56,7 +56,7 @@
 
                                             <th>Name</th>
                                             <th>Category</th>
-                                            <th>Price</th>
+                                            <th>Harga</th>
                                             <th>Stock</th>
                                             <th>Photo</th>
                                             <th>Created At</th>
@@ -93,9 +93,8 @@
                                                     <div class="d-flex justify-content-center">
                                                         @if (auth()->user()->roles != 'user')
                                                             <a href='{{ route('product.edit', $product->id) }}'
-                                                                class="btn btn-sm btn-info btn-icon">
-                                                                <i class="fas fa-edit"></i>
-                                                                Edit
+                                                                class="btn btn-sm btn-success btn-icon">
+                                                                <i class="fas fa-edit"></i> Edit
                                                             </a>
                                                         @endif
                                                         @if (auth()->user()->roles == 'staf' || auth()->user()->roles == 'admin')

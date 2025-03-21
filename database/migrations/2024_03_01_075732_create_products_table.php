@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('price')->default(0);
             //stock
             $table->integer('stock')->default(0);
-            //category enum (food, drink, snack)
+            //category enum (lemari, meja, kursi)
             $table->enum('category', ['lemari', 'meja', 'kursi']);
             //image
             $table->string('image')->nullable();

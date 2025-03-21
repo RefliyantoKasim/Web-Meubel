@@ -13,7 +13,7 @@
             <div class="section-header">
                 <h1>Users</h1>
                 <div class="section-header-button">
-                    <a href="{{ route('user.create') }}" class="btn btn-primary">Tambah User +</a>
+                    <a href="{{ route('user.create') }}" class="btn btn-sm btn-success btn-icon">Tambah User +</a>
                 </div>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item active"><a href="{{ url('home') }}">Dashboard</a></div>
@@ -67,7 +67,7 @@
 
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>Phone</th>
+                                            <th>No_Telp</th>
                                             <th>Roles</th>
                                             <th>Created At</th>
                                             <th>Action</th>
@@ -91,7 +91,7 @@
                                                     <div class="d-flex justify-content-center">
                                                         @if (auth()->user()->roles != 'user')
                                                             <a href='{{ route('user.edit', $user->id) }}'
-                                                                class="btn btn-sm btn-info btn-icon">
+                                                                class="btn btn-sm btn-success btn-icon">
                                                                 <i class="fas fa-edit"></i>
                                                                 Edit
                                                             </a>

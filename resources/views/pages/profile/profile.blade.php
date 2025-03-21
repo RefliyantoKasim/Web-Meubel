@@ -76,12 +76,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-12 col-lg-7">
+                    {{-- <div class="col-12 col-md-12 col-lg-7">
                         <div class="card">
                             <form method="post" class="needs-validation" novalidate="">
-                                <div class="card-header">
+                                <div class="card-header"> --}}
 
-                                    <h4>Edit Profile</h4>
+                    {{-- <h4>Edit Profile</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
@@ -135,12 +135,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card-footer text-right">
-                                    <button class="btn btn-primary">Save Changes</button>
-                            </form>
+                                </div> --}}
+                    {{-- <div class="card-footer text-right">
+                                        <button class="btn btn-primary">Save Changes</button> --}}
+                    {{-- </form>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>

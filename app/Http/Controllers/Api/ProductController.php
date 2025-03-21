@@ -30,8 +30,9 @@ class ProductController extends Controller
             'name' => 'required|min:3',
             'price' => 'required|integer',
             'stock' => 'required|integer',
-            'category' => 'required|in:food,drink,snack',
-            'image' => 'required|image|mimes:png,jpg,jpeg'
+            'category' => 'required|in:lemari,meja,kursi',
+            'image' => 'required|image|mimes:png,jpg,jpeg',
+            'estimated_days' => 'required|integer|min:1' // Validasi estimasi waktu
         ]);
 
         $filename = time() . '.' . $request->image->extension();
@@ -42,6 +43,7 @@ class ProductController extends Controller
             'stock' => (int) $request->stock,
             'category' => $request->category,
             'image' => $filename,
+            'estimated_days' => (int) $request->estimated_days, // Update estimasi waktu
             'is_favorite' => $request->is_favorite
         ]);
 

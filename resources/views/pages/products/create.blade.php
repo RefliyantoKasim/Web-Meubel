@@ -79,16 +79,16 @@
                                 <label class="form-label">Category</label>
                                 <div class="selectgroup w-100">
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="category" value="food" class="selectgroup-input"
+                                        <input type="radio" name="category" value="lemari" class="selectgroup-input"
                                             checked="">
                                         <span class="selectgroup-button">lemari</span>
                                     </label>
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="category" value="drink" class="selectgroup-input">
+                                        <input type="radio" name="category" value="meja" class="selectgroup-input">
                                         <span class="selectgroup-button">meja</span>
                                     </label>
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="category" value="snack" class="selectgroup-input">
+                                        <input type="radio" name="category" value="kursi" class="selectgroup-input">
                                         <span class="selectgroup-button">kursi</span>
                                     </label>
 
