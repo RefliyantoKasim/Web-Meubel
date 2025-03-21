@@ -91,10 +91,7 @@
                                                     <div class="d-flex justify-content-center">
                                                         @if (auth()->user()->roles != 'user')
                                                             <a href='{{ route('user.edit', $user->id) }}'
-                                                                class="btn btn-sm btn-success btn-icon">
-                                                                <i class="fas fa-edit"></i>
-                                                                Edit
-                                                            </a>
+                                                                class="btn btn-sm btn-success btn-icon">Edit</a>
                                                         @endif
                                                         @if (auth()->user()->roles == 'staf' || auth()->user()->roles == 'admin')
                                                             <form action="{{ route('user.destroy', $user->id) }}"
@@ -105,11 +102,8 @@
                                                                 {{-- <input type="hidden" name="_method" value="DELETE" />
                                                             <input type="hidden" name="_token"
                                                                 value="{{ csrf_token() }}" /> --}}
-                                                                <button
-                                                                    class="btn btn-sm btn-danger btn-icon confirm-delete">
-                                                                    <i class="fas fa-times"></i> Delete
-
-                                                                </button>
+                                                                <button type="submit" class="btn btn-danger btn-sm"
+                                                                    onclick="return confirm('Yakin hapus order ini?')">Hapus</button>
                                                             </form>
                                                         @endif
                                                     </div>

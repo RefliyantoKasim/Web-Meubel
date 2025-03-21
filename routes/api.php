@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\OrderController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,4 +33,4 @@ Route::post('logout', [\App\Http\Controllers\Api\AuthController::class, 'logout'
 Route::apiResource('products', \App\Http\Controllers\Api\ProductController::class)->middleware('auth:sanctum');
 
 // api resource order
-// Route::apiResource('orders', \App\Http\Controllers\Api\OrderController::class)->middleware('auth:sanctum');
+Route::post('order', [OrderController::class, 'store'])->middleware('auth:sanctum');

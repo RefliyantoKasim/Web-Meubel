@@ -63,13 +63,13 @@ class UserController extends Controller
             $data['password'] = $user->password;
         }
         $user->update($data);
-        return redirect()->route('user.index')->with('success', 'User Berhasil Diupdate');
+        return redirect()->route('user.index')->with('success', 'User Berhasil Perbarui');
     }
     //destroy
     public function destroy($id)
     {
         $user = User::findOrFail($id);
         $user->delete();
-        return redirect()->route('user.index')->with('success', 'User Berhasi Dihapus');
+        return redirect()->route('user.index')->with('success', 'User Berhasi Dihapus !!');
     }
 }

@@ -72,7 +72,10 @@ class OrderController extends Controller
             'nama_costumer' => 'sometimes|required|string|max:255',
             'tanggal_order' => 'sometimes|required|date',
             'total_harga' => 'sometimes|required|numeric',
-            'status' => 'sometimes|required|in:pending,processing,completed,canceled',
+            'status' => 'sometimes|required|in:tertunda,tertunda',
+            'sedang di proses',
+            'selesai',
+            'di batalkan',
         ]);
 
         // Update data order
@@ -90,6 +93,6 @@ class OrderController extends Controller
         $order->delete();
 
         // Redirect ke halaman index dengan pesan sukses
-        return redirect()->route('order.index')->with('success', 'Order berhasil dihapus!');
+        return redirect()->route('order.index')->with('success', 'Order berhasil dihapus !!');
     }
 }
