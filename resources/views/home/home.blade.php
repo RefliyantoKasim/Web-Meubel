@@ -392,7 +392,9 @@ https://templatemo.com/tm-572-designer
                                     <span>Guest Room Decoration</span>
                                 </div>
                             </div>
-                            <img src="assets/images/whats-trending-item-image.jpg" alt="">
+                            <img src="assets/images/
+                            whats-trending-item-image.jpg"
+                                alt="">
                         </div>
                     </div>
                 </div>

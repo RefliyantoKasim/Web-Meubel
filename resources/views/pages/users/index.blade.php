@@ -21,7 +21,7 @@
                     <div class="breadcrumb-item">All Users</div>
                 </div>
             </div>
-            <div class="section-body">
+            <div class="section-body ">
 
                 <div class="row">
                     <div class="col-12">
@@ -29,8 +29,8 @@
                     </div>
 
                 </div>
-                <h2 class="section-title">Users</h2>
-                <p class="section-lead">
+                <h2 class="section-title ">Users</h2>
+                <p class="section-lead ">
                     Anda dapat mengelola semua Pengguna, seperti mengedit, menghapus, dan lainnya.
                 </p>
                 <div class="row mt-4">
@@ -51,7 +51,8 @@
                                 <div class="float-right">
                                     <form method="GET" action="{{ route('user.index') }}">
                                         <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Cari" name="name">
+                                            <input type="text" class="form-control" placeholder="Cari nama user..."
+                                                name="name">
                                             <div class="input-group-append">
                                                 <button class="btn btn-primary"><i class="fas fa-search"></i></button>
                                             </div>

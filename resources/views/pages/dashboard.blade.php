@@ -22,15 +22,15 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4>Total produk</h4>
+                                <h4>Total Users</h4>
                             </div>
                             <div class="card-body">
-                                1 {{-- {{ $productCount }} --}}
+                                {{ $userCount ?? 'Data belum tersedia' }}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                {{-- <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <div class="card card-statistic-1">
                         <div class="card-icon bg-danger">
                             <i class="far fa-newspaper"></i>
@@ -44,22 +44,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="card card-statistic-1">
-                        <div class="card-icon bg-warning">
-                            <i class="far fa-file"></i>
-                        </div>
-                        <div class="card-wrap">
-                            <div class="card-header">
-                                <h4>Reports</h4>
-                            </div>
-                            <div class="card-body">
-                                1,201
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </div> --}}
+
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <div class="card card-statistic-1">
                         <div class="card-icon bg-success">
@@ -67,10 +53,25 @@
                         </div>
                         <div class="card-wrap">
                             <div class="card-header">
-                                <h4>Total Users</h4>
+                                <h4>Total Products</h4>
                             </div>
                             <div class="card-body">
-                                1 {{-- {{ $userCount }} --}}
+                                {{ $productCount ?? 'Data belum tersedia' }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <div class="card card-statistic-1">
+                        <div class="card-icon bg-warning">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="card-wrap">
+                            <div class="card-header">
+                                <h4>Total Orders</h4>
+                            </div>
+                            <div class="card-body">
+                                {{ $OrderCount ?? 'Data belum tersedia' }}
                             </div>
                         </div>
                     </div>

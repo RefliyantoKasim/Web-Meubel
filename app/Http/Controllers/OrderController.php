@@ -72,10 +72,7 @@ class OrderController extends Controller
             'nama_costumer' => 'sometimes|required|string|max:255',
             'tanggal_order' => 'sometimes|required|date',
             'total_harga' => 'sometimes|required|numeric',
-            'status' => 'sometimes|required|in:tertunda,tertunda',
-            'sedang di proses',
-            'selesai',
-            'di batalkan',
+            'status' => 'sometimes|required|in:pending,processing,completed,canceled',
         ]);
 
         // Update data order

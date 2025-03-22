@@ -13,7 +13,7 @@
             <div class="section-header">
                 <h1>Detail Order</h1>
                 <div class="section-header-button">
-                    <a href="{{ route('order.index') }}" class="btn btn-sm btn-primary">Kembali</a>
+                    <a href="{{ route('order.index') }}" class="btn btn-sm btn-success btn-icon">Kembali</a>
                 </div>
                 <div class="section-header-breadcrumb">
                     <div class="breadcrumb-item"><a href="{{ url('home') }}">Dashboard</a></div>
