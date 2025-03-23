@@ -34,7 +34,7 @@ class ProductController extends Controller
             'name' => 'required|min:3|unique:products',
             'price' => 'required|integer',
             'stock' => 'required|integer',
-            'category' => 'required|in:lemari,meja,kursi',
+            'category' => 'required|in:Lemari,Meja,Kursi',
             'image' => 'required|image|mimes:jpeg,png,jpg,svg',
             'estimated_days' => 'required|integer|min:1',
         ]);
@@ -70,7 +70,7 @@ class ProductController extends Controller
             'name' => 'required|min:3|unique:products',
             'price' => 'required|integer',
             'stock' => 'required|integer',
-            'category' => 'required|in:lemari,meja,kursi',
+            'category' => 'required|in:Lemari,Meja,Kursi',
             'image' => 'required|image|mimes:jpeg,png,jpg,svg',
             'estimated_days' => 'required|integer|min:1',
         ]);

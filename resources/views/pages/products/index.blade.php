@@ -96,7 +96,7 @@
                                                             <a href='{{ route('product.edit', $product->id) }}'
                                                                 class="btn btn-sm btn-success btn-icon">Edit</a>
                                                         @endif
-                                                        @if (auth()->user()->roles == 'staf' || auth()->user()->roles == 'admin')
+                                                        @if (auth()->user()->roles == 'staf' || auth()->user()->roles == 'ADMIN')
                                                             <form action="{{ route('product.destroy', $product->id) }}"
                                                                 method="POST" class="ml-2">
                                                                 @method('DELETE')
@@ -105,7 +105,7 @@
                                                                 <input type="hidden" name="_token"
                                                                     value="{{ csrf_token() }}" /> --}}
                                                                 <button type="submit" class="btn btn-danger btn-sm"
-                                                                    onclick="return confirm('Yakin hapus order ini?')">Hapus</button>
+                                                                    onclick="return confirm('Yakin hapus produk ini?')">Hapus</button>
                                                             </form>
                                                         @endif
                                                     </div>

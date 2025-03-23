@@ -21,7 +21,7 @@ return new class extends Migration
             //stock
             $table->integer('stock')->default(0);
             //category enum (lemari, meja, kursi)
-            $table->enum('category', ['lemari', 'meja', 'kursi']);
+            $table->enum('category', ['Lemari', 'Meja', 'Kursi']);
             //image
             $table->string('image')->nullable();
             // estimasi waktu

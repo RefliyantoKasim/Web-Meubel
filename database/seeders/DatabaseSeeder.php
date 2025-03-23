@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
-            'name' => 'meubel',
-            'email' => 'meubel@gmail.com',
+            'name' => 'Refliyanto kasim',
+            'email' => 'Refly@gmail.com',
             'password' => Hash::make('1212'),
-            'roles' => 'admin',
+            'roles' => 'ADMIN',
         ]);
 
 

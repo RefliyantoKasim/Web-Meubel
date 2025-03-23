@@ -49,7 +49,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label>Price</label>
+                                <label>Harga</label>
                                 <input type="number"
                                     class="form-control @error('price')
                                 is-invalid
@@ -89,16 +89,16 @@
                                 <label class="form-label">Category</label>
                                 <div class="selectgroup w-100">
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="category" value="lemari" class="selectgroup-input"
+                                        <input type="radio" name="category" value="Lemari" class="selectgroup-input"
                                             checked="">
                                         <span class="selectgroup-button">lemari</span>
                                     </label>
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="category" value="meja" class="selectgroup-input">
+                                        <input type="radio" name="category" value="Meja" class="selectgroup-input">
                                         <span class="selectgroup-button">meja</span>
                                     </label>
                                     <label class="selectgroup-item">
-                                        <input type="radio" name="category" value="kursi" class="selectgroup-input">
+                                        <input type="radio" name="category" value="Kursi" class="selectgroup-input">
                                         <span class="selectgroup-button">kursi</span>
                                     </label>
 
