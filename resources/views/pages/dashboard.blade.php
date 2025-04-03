@@ -21,16 +21,66 @@
                         <div class="card-icon bg-success">
                             <i class="far fa-user"></i>
                         </div>
+                        <?php
+                        // Pastikan koneksi database sudah dibuat di file yang bernama env sebelum membuat bagian ini
+                        $host = 'localhost';
+                        $user = 'root';
+                        $password = '1sampe10.';
+                        $database = 'db-meubel-2n';
+                        
+                        // Buat koneksi
+                        $con = mysqli_connect($host, $user, $password, $database);
+                        
+                        // Periksa koneksi
+                        if (!$con) {
+                            die('Koneksi gagal: ' . mysqli_connect_error());
+                        }
+                        
+                        // Query untuk menghitung jumlah pengguna
+                        $dash_users_query = 'SELECT COUNT(*) AS total_users FROM users';
+                        $dash_users_query_run = mysqli_query($con, $dash_users_query);
+                        $users_total = 0;
+                        
+                        // Ambil hasil query
+                        if ($dash_users_query_run) {
+                            $row = mysqli_fetch_assoc($dash_users_query_run);
+                            $users_total = $row['total_users'];
+                        }
+                        
+                        // Query untuk menghitung jumlah produk
+                        $dash_products_query = 'SELECT COUNT(*) AS total_products FROM products';
+                        $dash_products_query_run = mysqli_query($con, $dash_products_query);
+                        $products_total = 0;
+                        
+                        // Ambil hasil query products
+                        if ($dash_products_query_run) {
+                            $row = mysqli_fetch_assoc($dash_products_query_run);
+                            $products_total = $row['total_products'];
+                        }
+                        
+                        //query menghitung jumlah orders
+                        $dash_orders_query = 'SELECT COUNT(*) AS total_orders FROM orders';
+                        $dash_orders_query_run = mysqli_query($con, $dash_orders_query);
+                        $orders_total = 0;
+                        
+                        // Ambil hasil query products
+                        if ($dash_orders_query_run) {
+                            $row = mysqli_fetch_assoc($dash_orders_query_run);
+                            $orders_total = $row['total_orders'];
+                        }
+                        ?>
+
                         <div class="card-wrap">
                             <div class="card-header">
                                 <a href="{{ url('user') }}"></a>
                                 <h4>Total Users</h4>
+                                <h4></h4>
                             </div>
-                            <div class="card-body">
-                                1
-                                {{-- {{ $totalAllUsers ?? 'Data belum tersedia' }} --}}
+                            <div class="card-body" class="mb-0">
+                                <?= $users_total > 0 ? $users_total : 'Data belum tersedia' ?>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 {{-- <div class="col-lg-3 col-md-6 col-sm-6 col-12">
@@ -59,9 +109,9 @@
                             <div class="card-header">
                                 <h4>Total Products</h4>
                             </div>
-                            <div class="card-body">
-                                1
-                                {{-- {{ $totalProducts ?? 'Data belum tersedia' }} --}}
+                            <div class="card-body" class="mb-0">
+                                <?= $products_total > 0 ? $products_total : 'Data belum tersedia' ?>
+
                             </div>
                         </div>
                     </div>
@@ -76,8 +126,8 @@
                             <div class="card-header">
                                 <h4>Total Orders</h4>
                             </div>
-                            <div class="card-body">1
-                                {{-- {{ $totalOrders ?? 'Data belum tersedia' }} --}}
+                            <div class="card-body" class="mb-0">
+                                <?= $orders_total > 0 ? $orders_total : 'Data belum tersedia' ?>
                             </div>
                         </div>
                     </div>

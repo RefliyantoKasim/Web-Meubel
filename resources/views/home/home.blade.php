@@ -77,7 +77,7 @@ https://templatemo.com/tm-572-designer
                         <li class="nav-item">
                             <a class="nav-link active" href="{{ url('/') }}">Home</a>
                         </li>
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{ url('about') }}">Tentang kami</a>
                         </li>
                         <li class="nav-item">
@@ -85,7 +85,7 @@ https://templatemo.com/tm-572-designer
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('trending') }}">Kontak</a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('login') }}">Login/Admin</a>
                         </li>
@@ -183,7 +183,7 @@ https://templatemo.com/tm-572-designer
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-heading">
-                        <h2>Explore Some Of Our Latest<br><em>Interior Design Work</em>.</h2>
+                        <h2>Jelajahi Beberapa Karya Desain<br><em>Interior Terbaru Kami</em>.</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">

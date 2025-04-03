@@ -20,10 +20,11 @@
             </div>
             <div class="section-body">
                 <h2 class="section-title">
-                    Hi, {{ Auth::user()->role === 'staf' ? 'Staff' : Auth::user()->name }}!
+                    Hi, {{ Auth::user()->role === 'admin' ? 'admin' : Auth::user()->name }}!
                 </h2>
                 <p class="section-lead">
-                    Change information about yourself on this page.
+                    Saya Sebagai ({{ Auth::user()->role === 'admin' ? 'admin' : Auth::user()->roles }})
+
                 </p>
 
                 <div class="row mt-sm-4">
@@ -49,8 +50,8 @@
                             </div>
                             <div class="profile-widget-description">
                                 <div class="profile-widget-name">
-                                    {{ Auth::user()->role === 'staf' ? 'Staff' : Auth::user()->name }}<div
-                                        class="text-muted d-inline font-weight-normal">
+                                    {{ Auth::user()->role === 'admin' ? 'admin' : Auth::user()->name }}
+                                    <div class="text-muted d-inline font-weight-normal">
                                         <div class="slash"></div> Web Developer
                                     </div>
                                 </div>
